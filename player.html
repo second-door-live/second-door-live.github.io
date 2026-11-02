@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Demo player</title>
+<style>
+  html, body { height: 100%; margin: 0; }
+  body { display: grid; place-content: center; justify-items: center; gap: .75rem; background: #0d1a14; color: #f6f1e6; font: 16px/1.4 system-ui, -apple-system, sans-serif; text-align: center; overflow: hidden; }
+  img { width: 88px; animation: glow 3s ease-in-out infinite; }
+  strong { font-size: 1.1rem; }
+  small { color: #a9b1a6; }
+  @keyframes glow { 50% { opacity: .55; } }
+  @media (prefers-reduced-motion: reduce) { img { animation: none; } }
+</style></head>
+<body><img src="static/brand/mark.svg" alt=""><strong>The video would play here</strong><small>The demo isn't connected to Cloudflare Stream</small><script src="static/snapshot.js"></script>
+</body></html>

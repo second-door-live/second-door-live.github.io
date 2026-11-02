@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Venues</title>
+<meta name="theme-color" content="#16271f">
+<meta property="og:site_name" content="Sample Venues">
+
+<link rel="icon" href="../../static/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../static/brand/apple-touch-icon.png">
+<link rel="stylesheet" href="../../static/style.css">
+<style>:root { --brand: #16271f; --accent: #e0a43a; }</style>
+</head>
+<body>
+<div class="demo-bar"><a href="../../">Demo</a> <span>Made-up data. See it as:</span>
+  <a href="../../visitor/">Signed out</a><a href="../../viewer/">Viewer</a><a href="../../member/">Member</a><a href="./" aria-current="true">Artist</a><a href="../../staff/staff/scan/">Staff</a><a href="../../admin/admin/">Venue admin</a><a href="../../operator/platform/">Platform</a></div>
+<header class="bar">
+  <a class="home" href="../">Sample Venues</a>
+  <nav>
+    <a href="../membership/">Membership</a>
+    
+      <a href="../account/">Account</a>
+      <form method="post" action="#" class="inline"><button class="link">Sign out</button></form>
+    
+  </nav>
+</header>
+<main>
+
+
+
+<h1>Artist C</h1>
+<div class="card">
+  <h2>Payouts</h2>
+  <p>Your Stripe account is ready. Every venue on Second Door Live pays you through it: there is nothing to set up again.</p>
+  
+</div>
+
+<h2>Your shows</h2>
+
+<div class="card">
+  <h3>Artist C: winter night</h3>
+  <p>Main Hall (Sample Venues) · Tue Nov 10, 9:00 PM</p>
+  <p>Your terms: 60% of what is left, after Stripe's fees and the streaming cost.</p>
+  
+  <form method="post" action="#">
+    <p>May Main Hall stream this show? </p>
+    <label><input type="checkbox" name="replay" > Also sell a replay afterwards</label>
+    <small>Our video service records every stream while it runs. With no replay, the recording is deleted after the show.</small>
+    <label><input type="checkbox" name="own_songs" > The replay will have our own songs only (covers need licences)</label>
+    <button name="answer" value="yes">Yes, stream it</button> <button name="answer" value="no" class="secondary">No</button>
+  </form>
+  
+  <p><a href="../shows/7/statement/">Statement</a></p>
+</div>
+
+<div class="card">
+  <h3>Happy hour: Artist C</h3>
+  <p>Small Room (Sample Venues) · Tue Nov 3, 4:30 PM</p>
+  <p>Your terms: 50% of what is left, after Stripe's fees and the streaming cost.</p>
+  
+  <form method="post" action="#">
+    <p>May Small Room stream this show? <small>(You said yes; you can change it until it goes live.)</small></p>
+    <label><input type="checkbox" name="replay" checked> Also sell a replay afterwards</label>
+    <small>Our video service records every stream while it runs. With no replay, the recording is deleted after the show.</small>
+    <label><input type="checkbox" name="own_songs" checked> The replay will have our own songs only (covers need licences)</label>
+    <button name="answer" value="yes">Yes, stream it</button> <button name="answer" value="no" class="secondary">No</button>
+  </form>
+  
+  <p><a href="../shows/4/statement/">Statement</a></p>
+</div>
+
+<div class="card">
+  <h3>Artist C: late set</h3>
+  <p>Main Hall (Sample Venues) · Sat Oct 24, 9:00 PM</p>
+  <p>Your terms: 60% of what is left, after Stripe's fees and the streaming cost.</p>
+  <p>Streaming: yes.</p>
+  <p><a href="../shows/3/statement/">Statement</a></p>
+</div>
+
+
+<h2>Band members</h2>
+<p><small>Split the band's share across members' own accounts. The split applies once the shares add up to 100%; until then it all goes to the act's account.</small></p>
+<table><tr><th>Member</th><th>Share</th><th>Payouts</th><th></th></tr>
+<tr><td>Band member 1</td><td>40%</td><td>ready</td>
+  <td><form method="post" action="#" class="inline"><button class="link">Remove</button></form></td></tr><tr><td>Band member 2</td><td>20%</td><td>ready</td>
+  <td><form method="post" action="#" class="inline"><button class="link">Remove</button></form></td></tr><tr><td>Band member 3</td><td>20%</td><td>ready</td>
+  <td><form method="post" action="#" class="inline"><button class="link">Remove</button></form></td></tr><tr><td>Band member 4</td><td>20%</td><td>not set up</td>
+  <td><form method="post" action="#" class="inline"><button class="link">Remove</button></form></td></tr>
+</table>
+<form method="post" action="#" class="card">
+  <label>Name <input name="name"></label><label>Email <input type="email" name="email" required></label><label>Share % <input name="share" size="4" required></label>
+  <button>Add member</button></form>
+
+
+
+
+
+</main>
+<footer>Sample Venues · Streams by <span class="by"><img src="../../static/brand/icon.svg" alt="">Second Door Live</span></footer>
+
+<script src="../../static/snapshot.js"></script>
+</body>
+</html>

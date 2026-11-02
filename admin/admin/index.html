@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · Sample Venues</title>
+<meta name="theme-color" content="#16271f">
+<meta property="og:site_name" content="Sample Venues">
+
+<link rel="icon" href="../../static/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../static/brand/apple-touch-icon.png">
+<link rel="stylesheet" href="../../static/style.css">
+<style>:root { --brand: #16271f; --accent: #e0a43a; }</style>
+</head>
+<body>
+<div class="demo-bar"><a href="../../">Demo</a> <span>Made-up data. See it as:</span>
+  <a href="../../visitor/">Signed out</a><a href="../../viewer/">Viewer</a><a href="../../member/">Member</a><a href="../../artist/artist/">Artist</a><a href="../../staff/staff/scan/">Staff</a><a href="./" aria-current="true">Venue admin</a><a href="../../operator/platform/">Platform</a></div>
+<header class="bar">
+  <a class="home" href="../">Sample Venues</a>
+  <nav>
+    <a href="../membership/">Membership</a>
+    
+      <a href="../account/">Account</a>
+      <form method="post" action="#" class="inline"><button class="link">Sign out</button></form>
+    
+  </nav>
+</header>
+<main>
+
+
+<h1>Sample Venues: admin</h1>
+
+<p>Streaming spend this month $0.00 of a cap of $367.19 (50% of the last 30 days' takings).</p>
+<p><a class="button" href="shows/new/">New show</a> <a class="button secondary" href="payouts/">Payout plans and parties</a></p>
+
+<h2>Shows</h2>
+<table><tr><th>Show</th><th>When</th><th>Status</th><th>Artist's answer</th><th>Stream</th></tr>
+<tr>
+  <td><a href="shows/8/">Open mic, not announced yet</a><br><small>Small Room · Happy hour</small></td>
+  <td>Sat Nov 14, 5:00 PM</td><td>draft</td>
+  <td>Waiting</td>
+  <td>Record locally<br><small>$0.00 of $0.00</small></td>
+</tr><tr>
+  <td><a href="shows/7/">Artist C: winter night</a><br><small>Main Hall · Main act</small></td>
+  <td>Tue Nov 10, 9:00 PM</td><td>published</td>
+  <td>Waiting</td>
+  <td>Record locally<br><small>$0.00 of $0.00</small></td>
+</tr><tr>
+  <td><a href="shows/6/">Artist E</a><br><small>Main Hall · Main act</small></td>
+  <td>Thu Nov 5, 8:00 PM</td><td>published</td>
+  <td>Yes</td>
+  <td>Record locally<br><small>$17.18 of $0.19</small></td>
+</tr><tr>
+  <td><a href="shows/5/">Artist D</a><br><small>Main Hall · Main act</small></td>
+  <td>Tue Nov 3, 9:00 PM</td><td>published</td>
+  <td>Yes</td>
+  <td>Record locally<br><small>$455.26 of $3.45</small></td>
+</tr><tr>
+  <td><a href="shows/4/">Happy hour: Artist C</a><br><small>Small Room · Happy hour</small></td>
+  <td>Tue Nov 3, 4:30 PM</td><td>published</td>
+  <td>Yes, replay</td>
+  <td>Record locally<br><small>$0.00 of $0.57</small></td>
+</tr><tr>
+  <td><a href="shows/1/">Artist A: album release</a><br><small>Main Hall · Main act</small></td>
+  <td>Mon Nov 2, 4:20 PM</td><td>published</td>
+  <td>Yes, replay</td>
+  <td>May go live<br><small>$533.68 of $6.00</small></td>
+</tr><tr>
+  <td><a href="shows/2/">Happy hour: Artist B</a><br><small>Small Room · Happy hour</small></td>
+  <td>Sun Nov 1, 4:30 PM</td><td>published</td>
+  <td>Yes, replay</td>
+  <td>ended</td>
+</tr><tr>
+  <td><a href="shows/3/">Artist C: late set</a><br><small>Main Hall · Main act</small></td>
+  <td>Sat Oct 24, 9:00 PM</td><td>published</td>
+  <td>Yes</td>
+  <td>ended</td>
+</tr></table>
+
+<h2>Venues</h2>
+<table><tr><th>Venue</th><th>Happy hour</th><th>Payouts</th><th>MCVSAID</th><th>Ticketmaster</th></tr>
+<tr><td>Main Hall <small>(OH)</small></td>
+  <td>16:00–18:00; members to 20:00</td>
+  <td>Own account</td>
+  <td><form method="post" action="#" class="inline"><button class="link">Make token</button></form></td>
+  <td>—</td></tr>
+<tr><td>Small Room <small>(OH)</small></td>
+  <td>16:00–18:00; members to 20:00</td>
+  <td>
+    <form method="post" action="#" class="inline"><button class="link">Set up own payouts</button></form>
+    <small>(else the group's)</small></td>
+  <td><form method="post" action="#" class="inline"><button class="link">Make token</button></form></td>
+  <td>—</td></tr>
+</table>
+<details><summary>Add a venue</summary>
+<form method="post" action="#" class="card">
+  <label>Name <input name="name" required></label><label>Short name <input name="slug" required pattern="[a-z0-9-]+"></label>
+  <label>State <input name="state" value="OH" size="2"></label><label>Time zone <input name="timezone" value="America/New_York"></label>
+  <label>Ticketmaster venue ID <input name="ticketmaster_venue_id"></label>
+  <label>Happy hour from <input name="happy_hour_start" value="16:00" size="5"></label><label>to <input name="happy_hour_end" value="18:00" size="5"></label>
+  <button>Add venue</button></form></details>
+
+<h2>Payouts for the group</h2>
+<p>The group's Stripe account is ready.</p>
+
+<h2>Staff</h2>
+<ul><li>admin@example.com: admin</li><li>staff@example.com: staff</li></ul>
+<form method="post" action="#" class="card">
+  <label>Email <input type="email" name="email" required></label>
+  <label>Role <select name="role"><option value="staff">Venue staff</option><option value="group_admin">Group admin</option></select></label>
+  <label>Venue <select name="venue_id"><option value="">All venues</option><option value="1">Main Hall</option><option value="2">Small Room</option></select></label>
+  <button>Invite</button></form>
+
+<h2>Settings</h2>
+<form method="post" action="#" class="card grid">
+  <label>Name <input name="name" value="Sample Venues"></label>
+  <label>Logo address <input name="logo_url" value=""></label>
+  <label>Colour <input type="color" name="color_primary" value="#16271f"></label>
+  <label>Accent <input type="color" name="color_accent" value="#e0a43a"></label>
+  <label>Name on card statements <input name="statement_descriptor" value="SAMPLE" maxlength="12"></label>
+  <label>Membership a month $ <input name="membership_price" value="20.0"></label>
+  <label>Credits a month <input name="membership_credits" value="4"></label>
+  <label>Pack price $ <input name="pack_price" value="20.0"></label>
+  <label>Credits in a pack <input name="pack_credits" value="4"></label>
+  <label>Go-live margin % <input name="go_live_margin" value="25.0"></label>
+  <label>Monthly spend cap, % of takings <input name="spend_cap" value="50.0"></label>
+  <label>Delete unsold replays after (days) <input name="replay_retention_days" value="30"></label>
+  <label>Member happy hour ends <input name="member_happy_hour_end" value="20:00" size="5"></label>
+  <button>Save settings</button></form>
+
+</main>
+<footer>Sample Venues · Streams by <span class="by"><img src="../../static/brand/icon.svg" alt="">Second Door Live</span></footer>
+
+<script src="../../static/snapshot.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payouts · Sample Venues</title>
+<meta name="theme-color" content="#16271f">
+<meta property="og:site_name" content="Sample Venues">
+
+<link rel="icon" href="../../../static/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../static/brand/apple-touch-icon.png">
+<link rel="stylesheet" href="../../../static/style.css">
+<style>:root { --brand: #16271f; --accent: #e0a43a; }</style>
+</head>
+<body>
+<div class="demo-bar"><a href="../../../">Demo</a> <span>Made-up data. See it as:</span>
+  <a href="../../../visitor/">Signed out</a><a href="../../../viewer/">Viewer</a><a href="../../../member/">Member</a><a href="../../../artist/artist/">Artist</a><a href="../../../staff/staff/scan/">Staff</a><a href="./" aria-current="true">Venue admin</a><a href="../../../operator/platform/">Platform</a></div>
+<header class="bar">
+  <a class="home" href="../../">Sample Venues</a>
+  <nav>
+    <a href="../../membership/">Membership</a>
+    
+      <a href="../../account/">Account</a>
+      <form method="post" action="#" class="inline"><button class="link">Sign out</button></form>
+    
+  </nav>
+</header>
+<main>
+
+
+<p><a href="../">← Admin</a></p>
+<h1>Payout plans</h1>
+<p>A plan says who is paid from a show and how. After Stripe's fees and the streaming cost, the money goes first to
+the <strong>off-the-top</strong> terms (amounts per show, amounts per sale, percentages of gross sales) in the order listed,
+each as far as the money goes; what is left is split by the <strong>shares</strong>, which must add up to 100%.
+A share can be guaranteed ("$200 or 60%, whichever is more") or capped.</p>
+<p><small>A show uses its own plan if it has one, else its venue's, else the default. Once a show has paid out, its plan
+is fixed for it: changing the plan after that makes a new version for the shows still to come.</small></p>
+
+
+<div class="card" id="plan-1">
+  <h2>Standard <small>(default)</small></h2>
+  
+  <table>
+    <tr><th>Who</th><th>Terms</th><th>On the example: happy hour</th><th>main act</th><th></th></tr>
+    <tr>
+      <td>The artist</td>
+      <td class="terms">50% of what is left</td>
+      <td>$90.00</td><td>$90.00</td>
+      <td>
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr><tr>
+      <td>The venue</td>
+      <td class="terms">30% of what is left</td>
+      <td>$54.00</td><td>$54.00</td>
+      <td><form method="post" action="#" class="inline"><button class="link" aria-label="Move up">↑</button></form> 
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr><tr>
+      <td>Platform</td>
+      <td class="terms">20% of what is left</td>
+      <td>$36.00</td><td>$36.00</td>
+      <td><form method="post" action="#" class="inline"><button class="link" aria-label="Move up">↑</button></form> 
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr>
+  </table>
+  <p><small>The example: 20 sales, $200.00 gross, $180.00 after Stripe's fees and the streaming cost.</small></p>
+
+  <details><summary>Add a term</summary>
+  <form method="post" action="#" class="grid">
+    <label>Who <select name="party_type">
+      <option value="artist">The show's artist (split across the band)</option><option value="venue">The show's venue</option>
+      <option value="platform">Platform</option>
+      <option value="party:2">House bar (Bar)</option><option value="party:3">House kitchen (Kitchen)</option><option value="party:1">Production company (Production)</option><option value="party:4">Tour manager (Tour manager)</option>
+    </select></label>
+    <label>How <select name="kind"><option value="fixed" >An amount per show</option><option value="per_sale" >An amount per sale</option><option value="gross" >A % of gross sales</option><option value="share" selected>A share of what is left</option></select></label>
+    <label>Percentage (for a % or a share) <input name="rate" inputmode="decimal" placeholder="10"></label>
+    <label>Amount $ (per show or per sale) <input name="amount" inputmode="decimal" placeholder="75"></label>
+    <label>Guarantee $ (a share only) <input name="minimum" inputmode="decimal"></label>
+    <label>Cap $ <input name="cap" inputmode="decimal"></label>
+    <label>For <select name="tier"><option value="all">Every show</option><option value="happy_hour">Happy hours</option><option value="main">Main acts</option></select></label>
+    <label>Paid how many days after the show <input name="pay_after_days" value="0" inputmode="numeric"></label>
+    <button>Add term</button>
+  </form></details>
+  <p>
+    
+    <form method="post" action="#" class="inline"><input name="name" value="Standard" aria-label="Plan name" size="16"> <button class="link">Rename</button></form>
+  </p>
+</div>
+
+<div class="card" id="plan-2">
+  <h2>Main Hall deal</h2>
+  
+  <table>
+    <tr><th>Who</th><th>Terms</th><th>On the example: happy hour</th><th>main act</th><th></th></tr>
+    <tr>
+      <td>Production company <small>(Production)</small></td>
+      <td class="terms">$75.00 a show</td>
+      <td>$75.00</td><td>$75.00</td>
+      <td>
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr><tr>
+      <td>House bar <small>(Bar)</small></td>
+      <td class="terms">5% of gross sales</td>
+      <td>$10.00</td><td>$10.00</td>
+      <td><form method="post" action="#" class="inline"><button class="link" aria-label="Move up">↑</button></form> 
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr><tr>
+      <td>House kitchen <small>(Kitchen)</small></td>
+      <td class="terms">$0.50 a sale</td>
+      <td>$10.00</td><td>$10.00</td>
+      <td><form method="post" action="#" class="inline"><button class="link" aria-label="Move up">↑</button></form> 
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr><tr>
+      <td>Tour manager <small>(Tour manager)</small></td>
+      <td class="terms">$50.00 a show (main acts only), paid 7 days after the show</td>
+      <td>—</td><td>$50.00</td>
+      <td><form method="post" action="#" class="inline"><button class="link" aria-label="Move up">↑</button></form> 
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr><tr>
+      <td>The artist</td>
+      <td class="terms">60% of what is left</td>
+      <td>$51.00</td><td>$21.00</td>
+      <td><form method="post" action="#" class="inline"><button class="link" aria-label="Move up">↑</button></form> 
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr><tr>
+      <td>The venue</td>
+      <td class="terms">25% of what is left</td>
+      <td>$21.25</td><td>$8.75</td>
+      <td><form method="post" action="#" class="inline"><button class="link" aria-label="Move up">↑</button></form> 
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr><tr>
+      <td>Platform</td>
+      <td class="terms">15% of what is left</td>
+      <td>$12.75</td><td>$5.25</td>
+      <td><form method="post" action="#" class="inline"><button class="link" aria-label="Move up">↑</button></form> 
+        <form method="post" action="#" class="inline"><button class="link">Remove</button></form></td>
+    </tr>
+  </table>
+  <p><small>The example: 20 sales, $200.00 gross, $180.00 after Stripe's fees and the streaming cost.</small></p>
+
+  <details><summary>Add a term</summary>
+  <form method="post" action="#" class="grid">
+    <label>Who <select name="party_type">
+      <option value="artist">The show's artist (split across the band)</option><option value="venue">The show's venue</option>
+      <option value="platform">Platform</option>
+      <option value="party:2">House bar (Bar)</option><option value="party:3">House kitchen (Kitchen)</option><option value="party:1">Production company (Production)</option><option value="party:4">Tour manager (Tour manager)</option>
+    </select></label>
+    <label>How <select name="kind"><option value="fixed" >An amount per show</option><option value="per_sale" >An amount per sale</option><option value="gross" >A % of gross sales</option><option value="share" selected>A share of what is left</option></select></label>
+    <label>Percentage (for a % or a share) <input name="rate" inputmode="decimal" placeholder="10"></label>
+    <label>Amount $ (per show or per sale) <input name="amount" inputmode="decimal" placeholder="75"></label>
+    <label>Guarantee $ (a share only) <input name="minimum" inputmode="decimal"></label>
+    <label>Cap $ <input name="cap" inputmode="decimal"></label>
+    <label>For <select name="tier"><option value="all">Every show</option><option value="happy_hour">Happy hours</option><option value="main">Main acts</option></select></label>
+    <label>Paid how many days after the show <input name="pay_after_days" value="0" inputmode="numeric"></label>
+    <button>Add term</button>
+  </form></details>
+  <p>
+    <form method="post" action="#" class="inline"><button class="secondary">Make default</button></form>
+    <form method="post" action="#" class="inline"><input name="name" value="Main Hall deal" aria-label="Plan name" size="16"> <button class="link">Rename</button></form>
+  </p>
+</div>
+
+
+<details class="card"><summary>New plan</summary>
+<form method="post" action="#" class="grid">
+  <label>Name <input name="name" placeholder="Touring act with tour manager" required></label>
+  <label>Start from <select name="copy_from"><option value="">Nothing</option><option value="1" selected>Standard</option><option value="2" >Main Hall deal</option></select></label>
+  <button>Make plan</button></form></details>
+
+<h2>Which plan each venue uses</h2>
+<table><tr><td>Main Hall</td><td>
+  <form method="post" action="#" class="inline">
+    <select name="plan_id" aria-label="Plan for Main Hall"><option value="">The default</option><option value="1" >Standard</option><option value="2" selected>Main Hall deal</option></select>
+    <button class="link">Save</button></form></td></tr><tr><td>Small Room</td><td>
+  <form method="post" action="#" class="inline">
+    <select name="plan_id" aria-label="Plan for Small Room"><option value="">The default</option><option value="1" >Standard</option><option value="2" >Main Hall deal</option></select>
+    <button class="link">Save</button></form></td></tr></table>
+<p><small>A single show can have its own plan too: choose it on the show's page.</small></p>
+
+<h2>Parties</h2>
+<p>Anyone else paid from your shows, each with their own payout account: production, the bar, the kitchen, a tour manager, a promoter.</p>
+<table><tr><th>Party</th><th>Email</th><th>Payouts</th></tr>
+<tr>
+  <td><form method="post" action="#" class="inline">
+    <input name="name" value="House bar" aria-label="Name" size="14"> <input name="role" value="Bar" aria-label="Role" placeholder="Role" size="10">
+    <input type="email" name="email" value="house-bar@example.com" aria-label="Email" placeholder="Email" size="16"> <button class="link">Save</button></form></td>
+  <td><form method="post" action="#" class="inline"><button class="link">Email an invitation</button></form></td>
+  <td>Ready</td>
+</tr><tr>
+  <td><form method="post" action="#" class="inline">
+    <input name="name" value="House kitchen" aria-label="Name" size="14"> <input name="role" value="Kitchen" aria-label="Role" placeholder="Role" size="10">
+    <input type="email" name="email" value="house-kitchen@example.com" aria-label="Email" placeholder="Email" size="16"> <button class="link">Save</button></form></td>
+  <td><form method="post" action="#" class="inline"><button class="link">Email an invitation</button></form></td>
+  <td><form method="post" action="#" class="inline"><button class="link">Set up payouts here</button></form></td>
+</tr><tr>
+  <td><form method="post" action="#" class="inline">
+    <input name="name" value="Production company" aria-label="Name" size="14"> <input name="role" value="Production" aria-label="Role" placeholder="Role" size="10">
+    <input type="email" name="email" value="production-company@example.com" aria-label="Email" placeholder="Email" size="16"> <button class="link">Save</button></form></td>
+  <td><form method="post" action="#" class="inline"><button class="link">Email an invitation</button></form></td>
+  <td>Ready</td>
+</tr><tr>
+  <td><form method="post" action="#" class="inline">
+    <input name="name" value="Tour manager" aria-label="Name" size="14"> <input name="role" value="Tour manager" aria-label="Role" placeholder="Role" size="10">
+    <input type="email" name="email" value="tour-manager@example.com" aria-label="Email" placeholder="Email" size="16"> <button class="link">Save</button></form></td>
+  <td><form method="post" action="#" class="inline"><button class="link">Email an invitation</button></form></td>
+  <td>Ready</td>
+</tr></table>
+<form method="post" action="#" class="card grid">
+  <label>Name <input name="name" required placeholder="House kitchen"></label>
+  <label>Role <input name="role" placeholder="Kitchen"></label>
+  <label>Email <input type="email" name="email"></label>
+  <label><input type="checkbox" name="invite" checked> Email them to set up their payouts</label>
+  <button>Add party</button></form>
+<p><small>Money owed to a party before their payouts are set up is kept and sent once they are.</small></p>
+
+</main>
+<footer>Sample Venues · Streams by <span class="by"><img src="../../../static/brand/icon.svg" alt="">Second Door Live</span></footer>
+
+<script src="../../../static/snapshot.js"></script>
+</body>
+</html>

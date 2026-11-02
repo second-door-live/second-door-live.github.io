@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Second Door Live</title>
+<meta name="theme-color" content="#16271f">
+<meta property="og:site_name" content="Second Door Live">
+<link rel="icon" href="../../static/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../static/brand/apple-touch-icon.png">
+<link rel="stylesheet" href="../../static/style.css">
+<style>:root { --brand: #16271f; --accent: #e0a43a; }</style>
+</head>
+<body>
+<div class="demo-bar"><a href="../../">Demo</a> <span>Made-up data. See it as:</span>
+  <a href="../../visitor/">Signed out</a><a href="../../viewer/">Viewer</a><a href="../../member/">Member</a><a href="../../artist/artist/">Artist</a><a href="../../staff/staff/scan/">Staff</a><a href="../../admin/admin/">Venue admin</a><a href="./" aria-current="true">Platform</a></div>
+<header class="bar">
+  <a class="home" href="../../"><img class="mark" src="../../static/brand/mark.svg" alt=""><span class="wordmark">Second Door<small>Live</small></span></a>
+  <nav>
+    
+    
+      <a href="#">Account</a>
+      <form method="post" action="#" class="inline"><button class="link">Sign out</button></form>
+    
+  </nav>
+</header>
+<main>
+
+
+<h1>Second Door Live: venue groups</h1>
+<table><tr><th>Group</th><th>Domains</th><th>Venues</th></tr>
+<tr><td>Another Venue</td><td>watch.another-venue.example
+  <form method="post" action="#" class="inline"><input name="host" placeholder="watch.example.com" required><button class="link">Add domain</button></form></td>
+  <td>1</td></tr><tr><td>Sample Venues</td><td>watch.sample-venues.example
+  <form method="post" action="#" class="inline"><input name="host" placeholder="watch.example.com" required><button class="link">Add domain</button></form></td>
+  <td>2</td></tr>
+</table>
+<h2>Add a venue group</h2>
+<form method="post" action="#" class="card">
+  <label>Name <input name="name" required></label><label>Short name <input name="slug" required pattern="[a-z0-9-]+"></label>
+  <label>Domain <input name="host" required placeholder="watch.example.com"></label><label>First admin's email <input type="email" name="admin_email"></label>
+  <button>Add</button></form>
+
+</main>
+<footer>Streams by <span class="by"><img src="../../static/brand/icon.svg" alt="">Second Door Live</span></footer>
+
+<script src="../../static/snapshot.js"></script>
+</body>
+</html>

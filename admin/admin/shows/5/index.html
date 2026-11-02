@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Venues</title>
+<meta name="theme-color" content="#16271f">
+<meta property="og:site_name" content="Sample Venues">
+
+<link rel="icon" href="../../../../static/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../../static/brand/apple-touch-icon.png">
+<link rel="stylesheet" href="../../../../static/style.css">
+<style>:root { --brand: #16271f; --accent: #e0a43a; }</style>
+</head>
+<body>
+<div class="demo-bar"><a href="../../../../">Demo</a> <span>Made-up data. See it as:</span>
+  <a href="../../../../visitor/">Signed out</a><a href="../../../../viewer/">Viewer</a><a href="../../../../member/">Member</a><a href="../../../../artist/artist/">Artist</a><a href="../../../../staff/staff/scan/">Staff</a><a href="./" aria-current="true">Venue admin</a><a href="../../../../operator/platform/">Platform</a></div>
+<header class="bar">
+  <a class="home" href="../../../">Sample Venues</a>
+  <nav>
+    <a href="../../../membership/">Membership</a>
+    
+      <a href="../../../account/">Account</a>
+      <form method="post" action="#" class="inline"><button class="link">Sign out</button></form>
+    
+  </nav>
+</header>
+<main>
+
+
+<p><a href="../../">← Admin</a></p>
+<h1>Artist D</h1>
+<p>Main Hall · Tue Nov 3, 9:00 PM – 11:00 PM · published
+ · Main act, 4 credits · $22.00</p>
+<p>Artist: Artist D · answer: yes, no replay</p>
+
+<div class="card">
+  <h2>Not live yet: record it locally with MCVSAID</h2>
+  <p>Sales after Stripe's fees: $455.26. Needed to send it live: $3.45
+     (estimated streaming cost $2.76 plus 25%).</p>
+  <ul><li>It is more than two hours before the show</li></ul>
+</div>
+
+
+<form method="post" action="#" class="inline" onsubmit="return confirm('Cancel the show and refund every buyer?')"><button class="secondary">Cancel and refund</button></form>
+
+<p><a href="../../../shows/5/statement/">Statement</a> (the artist sees the same) · $455.26 to share so far</p>
+<div class="card"><h2>Payout plan: Main Hall deal</h2>
+  <ul><li>Production company: $75.00 a show</li><li>House bar: 5% of gross sales</li><li>House kitchen: $0.50 a sale</li><li>Tour manager: $50.00 a show (main acts only), paid 7 days after the show</li><li>Artist D: 60% of what is left</li><li>Main Hall: 25% of what is left</li><li>Platform: 15% of what is left</li></ul>
+  
+  
+  <form method="post" action="#" class="inline">
+    <select name="plan_id" aria-label="Payout plan"><option value="">The venue's plan (or the default)</option><option value="1" >Standard</option><option value="2" >Main Hall deal</option></select>
+    <button class="link">Use this plan</button></form> · <a href="../../payouts/">Edit plans</a>
+</div>
+
+
+
+
+<details><summary>Edit</summary>
+<form method="post" action="#" class="card grid">
+  <label>Title <input name="title" value="Artist D"></label>
+  <label>Tier <select name="tier"><option value="happy_hour" >Happy hour</option><option value="main" selected>Main act</option></select></label>
+  <label>Main act credits <select name="credit_cost"><option >3</option><option selected>4</option></select></label>
+  <label>Date <input type="date" name="date" value="2026-11-03"></label>
+  <label>Starts <input type="time" name="start" value="21:00"></label>
+  <label>Ends <input type="time" name="end" value="23:00"></label>
+  <label>Full price $ <input name="full_price" value="22.0"></label>
+  <label>Artist's name <input name="artist_name" value="Artist D"></label>
+  <label>Artist's email <input type="email" name="artist_email" value="artist-d@example.com"></label>
+  <button>Save</button></form></details>
+
+
+</main>
+<footer>Sample Venues · Streams by <span class="by"><img src="../../../../static/brand/icon.svg" alt="">Second Door Live</span></footer>
+
+<script src="../../../../static/snapshot.js"></script>
+</body>
+</html>
